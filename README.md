@@ -3,4 +3,5 @@
  
 “Blogster” is blog responsive app where you as a registered user can create, delete and edit your posts. You can also comment on posts and “buy” products. Throughout this project I have used PostgreSQL, Sequelize, Redis, Express.js and Angular.
 
+In folder `3-screenshots` you can find some screenshots of my project.
 
