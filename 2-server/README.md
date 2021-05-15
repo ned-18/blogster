@@ -1,4 +1,4 @@
-# Client
+# Server
 
 This project was generated with npx express-generator.
 
