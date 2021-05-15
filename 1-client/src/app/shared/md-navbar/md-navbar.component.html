@@ -1,0 +1,36 @@
+<div class="dashboard-navbar">
+  <a routerLink="/" class="profile">Blogster</a>
+  <span
+    class="material-icons"
+    (click)="toggleNavbar()"
+    [ngClass]="isOpen ? 'icon-fixed' : 'icon'"
+  >
+    {{ isOpen ? "close" : "menu" }}</span
+  >
+</div>
+<ul class="nav-list" *ngIf="isOpen" @flyInOut>
+  <ng-container *ngIf="signedIn">
+    <li
+      *ngFor="let item of items"
+      [routerLink]="item.route"
+      (click)="toggleNavbar()"
+    >
+      <span class="material-icons nav-icon"> {{ item.icon }}</span>
+      {{ item.link }}
+    </li>
+    <li (click)="onLogout()">
+      <span class="material-icons nav-icon"> logout</span>
+      Logout
+    </li>
+  </ng-container>
+  <ng-container *ngIf="!signedIn">
+    <li
+      *ngFor="let item of itemsUserIsNotSigned"
+      [routerLink]="item.route"
+      (click)="toggleNavbar()"
+    >
+      <span class="material-icons nav-icon"> {{ item.icon }}</span>
+      {{ item.link }}
+    </li>
+  </ng-container>
+</ul>

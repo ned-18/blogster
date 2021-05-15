@@ -1,0 +1,72 @@
+form {
+  padding: 2rem 0;
+}
+.select {
+  width: 100%;
+  font-family: inherit;
+  margin-bottom: 3rem;
+  outline: none;
+  padding: 0 1rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 2.5rem;
+  display: inline-block;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #0db3e3;
+  color: #333;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  cursor: pointer;
+  height: 2.5rem;
+  appearance: none;
+  background: url(../../../../../../assets/images/arrow-down.png) 100% / 15%
+    no-repeat transparent;
+  background-size: 25px 20px;
+}
+
+.select:focus {
+  border-bottom: 2px solid #333;
+  background-image: none;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button--add,
+.button--back {
+  padding: 1rem 3rem;
+  min-width: 7.5rem;
+  font-size: 0.9rem;
+  max-width: 21.25rem;
+  box-sizing: border-box;
+  margin-top: 2rem;
+}
+
+.button--add {
+  color: #fff;
+  background-color: #0db3e3;
+}
+
+.button--back {
+  color: #0db3e3;
+  background-color: #fff;
+}
+
+.button--add:hover {
+  transition: 0.3s;
+  background-color: #027190;
+  border: 1px solid #027190;
+}
+
+.button--back:hover {
+  color: #fff;
+  background-color: #0db3e3;
+  border: 1px solid #0db3e3;
+}
+
+.help {
+  bottom: 2.4rem;
+}

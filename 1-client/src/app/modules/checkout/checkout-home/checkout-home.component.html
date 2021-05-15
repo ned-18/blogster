@@ -1,0 +1,49 @@
+<div class="container">
+  <h1 class="header" style="color: firebrick; font-size: 2rem">
+    Coming Soon...
+  </h1>
+  <div class="checkout">
+    <h1 class="header">Checkout</h1>
+    <form [formGroup]="checkout" (ngSubmit)="onSubmit()">
+      <app-input
+        [name]="'cardholderName'"
+        [control]="checkout.get('cardholderName')"
+        [label]="'Cardholder Name'"
+        [maxlength]="'60'"
+      ></app-input>
+      <app-input
+        [name]="'cardNumber'"
+        [control]="checkout.get('cardNumber')"
+        [label]="'Card Number'"
+        [type]="'number'"
+      ></app-input>
+      <app-input
+        [name]="'expiryDate'"
+        [control]="checkout.get('expiryDate')"
+        [label]="'Expiry Date'"
+      ></app-input>
+      <app-input
+        [name]="'cvv'"
+        [control]="checkout.get('cvv')"
+        [label]="'CVV'"
+      ></app-input>
+      <div class="submit">
+        <button
+          type="submit"
+          class="button button--payment"
+          [disabled]="!checkout.valid"
+        >
+          Complete Payment
+        </button>
+        <p>Total price: {{ totalPrice | currency }}</p>
+      </div>
+    </form>
+  </div>
+  <div class="order-details">
+    <h1 class="header">Order Details</h1>
+    <app-order-details
+      *ngFor="let prod of orderDetails.data"
+      [product]="prod.product"
+    ></app-order-details>
+  </div>
+</div>

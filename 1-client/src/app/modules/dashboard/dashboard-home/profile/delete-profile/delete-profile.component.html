@@ -1,0 +1,43 @@
+<div>
+  <h1 class="header">Are you sure you want to delete your account?</h1>
+  <p class="body">
+    If you login in the next 30 days, your account will be restored.
+  </p>
+  <p class="body">Please confirm your password</p>
+  <form
+    [formGroup]="deleteProfileForm"
+    (ngSubmit)="deleteProfile()"
+    *ngIf="!isLoading"
+  >
+    <app-input
+      [name]="'password'"
+      [control]="deleteProfileForm.get('password')"
+      [label]="'Password'"
+      [type]="'password'"
+      [maxlength]="'60'"
+      (input)="error = null"
+    ></app-input>
+    <ng-container *ngIf="error && !deleteProfileForm.get('password').errors">
+      <p class="is-danger help">{{ error }}</p>
+    </ng-container>
+    <div class="buttons">
+      <button
+        class="button button--delete-profile"
+        type="submit"
+        [disabled]="!deleteProfileForm.valid"
+      >
+        Delete
+      </button>
+      <button
+        class="button button--back"
+        type="button"
+        routerLink="/dashboard/profile"
+      >
+        Back
+      </button>
+    </div>
+  </form>
+  <div class="spinner" *ngIf="isLoading">
+    <mat-spinner [diameter]="50"></mat-spinner>
+  </div>
+</div>

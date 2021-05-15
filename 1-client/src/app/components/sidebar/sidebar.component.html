@@ -1,0 +1,46 @@
+<div class="side-navbar">
+  <div class="logo-container">
+    <img
+      src="../../../assets/images/logo.png"
+      alt="logo"
+      routerLink="/"
+      routerLinkActive=""
+      [routerLinkActiveOptions]="{ exact: true }"
+    />
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa delectus
+      atque saepe impedit.
+    </p>
+  </div>
+  <ul class="links">
+    <li
+      class="item"
+      routerLink="/"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <span class="material-icons nav-icon"> home </span> Home
+    </li>
+    <li class="item" routerLink="/stories/travel" routerLinkActive="active">
+      <span class="material-icons nav-icon">flight_takeoff</span>Travel
+    </li>
+    <li class="item" routerLink="/stories/world" routerLinkActive="active">
+      <span class="material-icons nav-icon"> public</span>World
+    </li>
+    <li class="item" routerLink="/stories/sport" routerLinkActive="active">
+      <span class="material-icons nav-icon">sports_basketball</span>Sport
+    </li>
+    <li class="item" routerLink="/stories/music" routerLinkActive="active">
+      <span class="material-icons nav-icon">headphones</span>Music
+    </li>
+    <li class="item" routerLink="/shop" routerLinkActive="active">
+      <span class="material-icons nav-icon">store</span>Shop
+    </li>
+    <li class="item" routerLink="/contact" routerLinkActive="active">
+      <span class="material-icons nav-icon">contact_support</span>Contact
+    </li>
+  </ul>
+  <div class="badge">
+    <p>2020 © <a href="https://github.com/ned-18">ned-18</a></p>
+  </div>
+</div>

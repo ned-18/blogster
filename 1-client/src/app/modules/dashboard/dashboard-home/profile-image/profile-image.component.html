@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="profile-header">
+    <h1>Upload your image profile</h1>
+  </div>
+  <form
+    [formGroup]="profileImageForm"
+    (ngSubmit)="onSubmit()"
+    *ngIf="!isLoading"
+  >
+    <app-image-upload-input
+      [control]="profileImageForm.get('profileImageUrl')"
+      [imageUploadClass]="'image-upload-profile'"
+      [imageNameClass]="'image-name-profile'"
+      [imagePreviewClass]="'image-preview-profile'"
+    ></app-image-upload-input>
+
+    <button
+      type="submit"
+      [disabled]="
+        profileImageForm.get('profileImageUrl').value === null ||
+        profileImageForm.invalid
+      "
+      class="button button--upload-image"
+    >
+      Upload
+    </button>
+  </form>
+  <div class="spinner" *ngIf="isLoading">
+    <mat-spinner [diameter]="50"></mat-spinner>
+  </div>
+</div>

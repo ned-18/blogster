@@ -1,0 +1,19 @@
+<!-- Modal -->
+<div class="overlay" (click)="activeModal.dismiss()"></div>
+<div class="modal">
+  <div class="modal-header">
+    <h1>{{ header }}</h1>
+    <a class="close" (click)="activeModal.dismiss()">&times; </a>
+  </div>
+  <div class="modal-body">
+    <p>{{ body }}</p>
+  </div>
+  <div class="modal-footer">
+    <a class="button--modal danger" (click)="activeModal.close()">{{
+      buttonOne
+    }}</a>
+    <a class="button--modal primary" (click)="activeModal.dismiss()">{{
+      buttonTwo
+    }}</a>
+  </div>
+</div>

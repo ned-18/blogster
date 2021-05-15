@@ -1,0 +1,28 @@
+<div class="sidebar">
+  <div class="profile-image">
+    <p>{{ username }}</p>
+    <img
+      routerLink="profile-image"
+      [src]="
+        profileImage ? profileImage : '../../../../../assets/images/avatar.jpeg'
+      "
+      [alt]="username"
+    />
+  </div>
+  <ul class="items">
+    <li routerLink="posts" routerLinkActive="active">
+      <mat-icon class="icon">notes</mat-icon>Posts
+    </li>
+    <li routerLink="profile" routerLinkActive="active">
+      <mat-icon class="icon">person</mat-icon>Profile
+    </li>
+    <li routerLink="comments" routerLinkActive="active">
+      <mat-icon class="icon">message</mat-icon>Comments
+    </li>
+  </ul>
+
+  <div class="buttons">
+    <a class="button button--home" routerLink="/">Home</a>
+    <a class="button button--logout" (click)="onLogout()">Log Out</a>
+  </div>
+</div>

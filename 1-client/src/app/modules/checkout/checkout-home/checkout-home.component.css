@@ -1,0 +1,28 @@
+form {
+  margin-top: 2rem;
+}
+
+.submit {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit p {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.button--payment {
+  width: 250px;
+  padding: 0.9rem 1.5rem;
+  font-size: 0.85rem;
+  border: 1px solid #0db3e3;
+  background-color: transparent;
+  color: #0db3e3;
+}
+
+.button--payment:hover {
+  background-color: #0db3e3;
+  color: #fff;
+}

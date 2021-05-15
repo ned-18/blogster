@@ -1,0 +1,18 @@
+<div class="profile-header">
+  <h1>Your Comments</h1>
+</div>
+
+<app-table
+  *ngIf="comments.length > 0 && !isLoading"
+  [header]="header"
+  [content]="comments"
+  (onDelete)="deleteComment($event)"
+></app-table>
+
+<div class="no-posts" *ngIf="comments.length === 0 && !isLoading">
+  <h1>You don't have comments currently</h1>
+</div>
+
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner [diameter]="50"></mat-spinner>
+</div>

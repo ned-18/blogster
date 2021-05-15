@@ -1,0 +1,60 @@
+<div class="profile-header">
+  <h1>{{ title }}</h1>
+</div>
+<form [formGroup]="postFrom" (ngSubmit)="submit()" *ngIf="!isLoading">
+  <app-input
+    [name]="'title'"
+    [control]="postFrom.get('title')"
+    [label]="'Title'"
+    [type]="'text'"
+    [maxlength]="'60'"
+  ></app-input>
+
+  <div class="control">
+    <label class="label">Content <span>*</span></label>
+    <textarea
+      class="textarea"
+      rows="3"
+      [formControl]="postFrom.get('content')"
+    ></textarea>
+
+    <ng-container *ngIf="showErrors('content')">
+      <div class="is-danger help">
+        Content is required and it must be at least 15 characters.
+      </div>
+    </ng-container>
+  </div>
+  <div class="control">
+    <label class="label">Select type of your post <span>*</span></label>
+    <select class="select" [formControl]="postFrom.get('type')">
+      <option value="travel">Travel</option>
+      <option value="world">World</option>
+      <option value="sport">Sport</option>
+      <option value="music">Music</option>
+      <option value="other">Other</option>
+    </select>
+  </div>
+
+  <app-image-upload-input
+    [label]="'Upload image'"
+    [control]="this.postFrom.get('imageUrl')"
+    [labelClass]="'label help'"
+    [imageUploadClass]="'image-upload'"
+    [imageNameClass]="'image-name'"
+    [imagePreviewClass]="'image-preview'"
+  ></app-image-upload-input>
+
+  <div class="buttons">
+    <button
+      class="button button--add"
+      [disabled]="postFrom.invalid"
+      type="submit"
+    >
+      {{ buttonLabel }}
+    </button>
+    <a class="button button--back" routerLink="/dashboard/posts"> Cancel </a>
+  </div>
+</form>
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner [diameter]="50"></mat-spinner>
+</div>

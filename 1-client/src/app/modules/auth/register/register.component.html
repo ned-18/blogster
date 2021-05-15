@@ -1,0 +1,100 @@
+<div class="container">
+  <h1 class="header">Regsiter to Stories</h1>
+  <form
+    [formGroup]="signUpForm"
+    (ngSubmit)="onRegisterSubmit()"
+    *ngIf="!isLoading"
+  >
+    <app-input
+      [name]="'firstName'"
+      [control]="signUpForm.get('firstName')"
+      [label]="'First Name'"
+      [maxlength]="'60'"
+    ></app-input>
+    <app-input
+      [name]="'lastName'"
+      [control]="signUpForm.get('lastName')"
+      [label]="'Last Name'"
+      [maxlength]="'60'"
+    ></app-input>
+    <div class="position">
+      <app-input
+        [name]="'username'"
+        [control]="signUpForm.get('username')"
+        [label]="'Username'"
+        [maxlength]="'60'"
+        (input)="isUsernameExists = null"
+      ></app-input>
+      <ng-container
+        *ngIf="isUsernameExists && !signUpForm.get('username').errors"
+      >
+        <p class="is-danger help">
+          {{ isUsernameExists }} Please enter another username!
+        </p>
+      </ng-container>
+    </div>
+    <div class="position">
+      <app-input
+        [name]="'email'"
+        [control]="signUpForm.get('email')"
+        [label]="'Email'"
+        [maxlength]="'60'"
+        (input)="isEmailExists = null"
+      ></app-input>
+      <ng-container *ngIf="isEmailExists && !signUpForm.get('email').errors">
+        <p class="is-danger help">
+          {{ isEmailExists }} Please enter another email!
+        </p>
+      </ng-container>
+    </div>
+    <app-input
+      [name]="'password'"
+      [control]="signUpForm.get('password')"
+      [label]="'Password'"
+      [type]="'password'"
+      [maxlength]="'60'"
+    ></app-input>
+    <app-input
+      [name]="'confirmPassword'"
+      [control]="signUpForm.get('confirmPassword')"
+      [label]="'Confirm password'"
+      [type]="'password'"
+      [maxlength]="'60'"
+    ></app-input>
+
+    <ng-container
+      *ngIf="
+        signUpForm.errors &&
+        (signUpForm.get('password').touched ||
+          signUpForm.get('confirmPassword').touched)
+      "
+    >
+      <p
+        class="is-danger help-passwords"
+        *ngIf="signUpForm.errors.passwordsDontMatch"
+      >
+        Password and confirm password must match!
+      </p>
+    </ng-container>
+    <button
+      class="button button--signup"
+      [disabled]="signUpForm.invalid"
+      type="submit"
+    >
+      Register to Stories
+    </button>
+  </form>
+
+  <div class="footer" *ngIf="!isLoading">
+    <p class="suggestion">
+      Have an account? <a class="link" routerLink="/join/login">Login</a>
+    </p>
+    <p class="policy">
+      By registering, you agree to our <a class="link">Terms of Service</a> and
+      <a class="link">Privacy Policy</a>
+    </p>
+  </div>
+  <div class="spinner" *ngIf="isLoading">
+    <mat-spinner [diameter]="50"></mat-spinner>
+  </div>
+</div>

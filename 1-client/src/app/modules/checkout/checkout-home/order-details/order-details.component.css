@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.product-img {
+  width: 70px;
+  margin-right: 1rem;
+}
+
+.product-title {
+  font-size: 0.9rem;
+  margin-right: 1rem;
+}

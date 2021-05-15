@@ -1,0 +1,74 @@
+.cart {
+  border-collapse: collapse;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.cart td,
+.cart th {
+  padding: 0.5rem 1rem;
+  vertical-align: middle;
+}
+
+.cart tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.cart th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  color: #0db3e3;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #333;
+}
+
+.cart th.quantity,
+.quantity {
+  text-align: center;
+  font-weight: bold;
+}
+
+.delete {
+  color: #9d0016;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+.checkout {
+  position: relative;
+  margin: 2rem 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: right;
+  border-top: 1px solid #eee;
+}
+
+.currency-text {
+  font-weight: 600;
+}
+
+.currency {
+  font-size: 1.2rem;
+}
+
+.button--checkout {
+  background-color: transparent;
+  color: #0db3e3;
+  padding: 0.7rem 2rem;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.button--checkout:hover {
+  color: #fff;
+  background-color: #0db3e3;
+}
+
+.if-cart {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 5rem;
+}

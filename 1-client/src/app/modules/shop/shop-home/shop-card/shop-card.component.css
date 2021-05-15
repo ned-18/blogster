@@ -1,0 +1,38 @@
+:host {
+  justify-self: center;
+  align-self: center;
+}
+.title {
+  font-size: 1.1rem;
+  text-align: center;
+  height: 48px;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 2px;
+  overflow: hidden;
+  height: 378px;
+}
+
+.book-footer {
+  text-align: center;
+}
+
+.price {
+  font-weight: 600;
+  color: #e7a200;
+}
+
+.button--cart {
+  width: 250px;
+  padding: 0.3rem 0;
+  background-color: transparent;
+  color: #0db3e3;
+}
+
+.button--cart:hover {
+  background-color: #0db3e3;
+  color: #fff;
+}

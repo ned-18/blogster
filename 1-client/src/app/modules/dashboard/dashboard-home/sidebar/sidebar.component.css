@@ -1,0 +1,115 @@
+.sidebar {
+  background-color: #333;
+  width: 280px;
+  color: #fff;
+  position: relative;
+  min-height: 850px;
+  height: 100%;
+}
+
+.profile-image {
+  width: 85%;
+  padding: 2rem;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+}
+
+.profile-image img {
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.2s ease-in;
+}
+
+.profile-image img:hover {
+  filter: brightness(50%);
+}
+
+.profile-image p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.items {
+  padding: 0;
+  list-style: none;
+}
+
+.items li {
+  cursor: pointer;
+  padding: 1rem 2rem;
+  text-transform: uppercase;
+  vertical-align: middle;
+  transition: 0.3s;
+}
+
+.items li:last-child {
+  margin-bottom: 10rem;
+}
+
+.icon {
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
+.items li:hover,
+.active {
+  background-color: rgb(161, 161, 161);
+  color: #06ec4c;
+  outline: none;
+}
+
+.buttons {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.button:first-child {
+  border-right: 0.5px solid #333;
+}
+
+.button:last-child {
+  border-left: 0.5px solid #333;
+}
+
+.button--home,
+.button--logout {
+  display: block;
+  margin-top: 5rem;
+  padding: 0.5rem 2rem;
+  font-size: 0.85rem;
+  color: #c7c7c7;
+  background-color: #8888887e;
+  width: 50%;
+  border: none;
+}
+
+.button--home:hover,
+.button--logout:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+/* RESPONSIVE */
+@media only screen and (max-width: 1209px) {
+  .sidebar {
+    min-height: 100vh;
+  }
+}
+
+@media only screen and (max-width: 864px) {
+  .sidebar {
+    width: 265px;
+  }
+}
+
+@media only screen and (max-width: 849px) {
+  .sidebar {
+    display: none;
+  }
+}

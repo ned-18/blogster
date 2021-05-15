@@ -1,0 +1,26 @@
+<table class="table">
+  <tr class="item">
+    <th *ngFor="let h of header">{{ h }}</th>
+  </tr>
+  <tr class="item" *ngFor="let c of content">
+    <td *ngIf="c.imageUrl">
+      <img class="img" [src]="c.imageUrl" [alt]="c.title" />
+    </td>
+    <td class="title" *ngIf="c.title">
+      <a [routerLink]="'/post/' + c.id">{{ c?.title | shorten: 15 }}</a>
+    </td>
+    <td class="title" *ngIf="c.comment">
+      <a [routerLink]="'/post/' + c.postId">{{ c?.comment | shorten: 15 }}</a>
+    </td>
+    <td>{{ c.createdAt | date: "d/M/yy" }}</td>
+    <td class="icons">
+      <a class="material-icons icon delete" (click)="delete(c)">delete</a>
+      <a
+        class="material-icons icon edit"
+        *ngIf="c.imageUrl"
+        [routerLink]="['/dashboard/edit-post', c.id]"
+        >edit</a
+      >
+    </td>
+  </tr>
+</table>

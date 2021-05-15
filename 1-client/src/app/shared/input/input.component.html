@@ -1,0 +1,33 @@
+<label class="label">{{ label }}<span *ngIf="validator">*</span></label>
+<input
+  class="input"
+  [type]="type"
+  [name]="name"
+  [formControl]="control"
+  [max]="date"
+  [maxlength]="maxlength"
+/>
+
+<ng-container *ngIf="showErrors">
+  <div class="is-danger help" *ngIf="control.errors.required">
+    {{ label }} is required.
+  </div>
+  <div class="is-danger help" *ngIf="control.errors.minlength">
+    {{ label }} must be at least
+    {{ control.errors.minlength.requiredLength }}
+    characters.
+  </div>
+  <div class="is-danger help" *ngIf="control.errors.emailIsNotValid">
+    Please enter valid {{ label | lowercase }}. E.g. email@email.com
+  </div>
+  <div class="is-danger help" *ngIf="control.errors.passwordIsNotValid">
+    {{ label }} must have at least 8 characters. One uppercase letter, numeric
+    and special character.
+  </div>
+  <div class="is-danger help" *ngIf="control.errors.phoneIsNotValid">
+    Please enter valid format. E.g. +38733112233.
+  </div>
+  <div class="is-danger help" *ngIf="control.errors.pattern">
+    Invalid format
+  </div>
+</ng-container>

@@ -1,0 +1,40 @@
+.body {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button--delete-profile,
+.button--back {
+  color: #eee;
+  width: 150px;
+  font-size: 0.85rem;
+}
+
+.button--delete-profile {
+  border: 1px solid #9d0016;
+  background-color: #9d0016;
+}
+
+.button--back {
+  border: 1px solid #0db3e3;
+  background-color: #0db3e3;
+}
+
+.button--delete-profile:hover {
+  background-color: #eee;
+  color: #9d0016;
+}
+
+.button--back:hover {
+  background-color: #eee;
+  color: #0db3e3;
+}
+
+.help {
+  bottom: 3.7rem;
+}

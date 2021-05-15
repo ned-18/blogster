@@ -1,0 +1,25 @@
+<div class="container" *ngIf="!isLoading">
+  <h1 class="title">{{ title }}</h1>
+  <p class="comments">Comments ({{ comments.length }})</p>
+
+  <ng-container *ngIf="comments.length">
+    <app-comment
+      *ngFor="let comment of comments"
+      [comment]="comment"
+    ></app-comment>
+  </ng-container>
+  <div *ngIf="!comments.length">
+    <p class="no-comment">
+      Nobody has commented on this post yet. Be the first.
+    </p>
+  </div>
+
+  <app-comment-form
+    [postId]="postId"
+    (onSubmit)="createNewComment($event)"
+  ></app-comment-form>
+</div>
+
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner [diameter]="50"></mat-spinner>
+</div>

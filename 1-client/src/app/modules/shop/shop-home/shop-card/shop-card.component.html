@@ -1,0 +1,11 @@
+<div class="book-header">
+  <h3 class="title">{{ book.title }}</h3>
+</div>
+
+<div class="img-container">
+  <img [src]="book.imageUrl" />
+</div>
+<div class="book-footer">
+  <p class="price">{{ book.price }} $</p>
+  <button class="button button--cart" (click)="addToCart()">Add to Cart</button>
+</div>

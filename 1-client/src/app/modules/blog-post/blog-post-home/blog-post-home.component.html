@@ -1,0 +1,30 @@
+<div class="container" *ngIf="post">
+  <ng-container>
+    <ul class="items">
+      <li>
+        <mat-icon fontSet="material-icons-outlined" class="icon"
+          >create</mat-icon
+        >{{ post.user.username }}
+      </li>
+      <li>
+        <mat-icon class="icon">today</mat-icon>{{ post.createdAt | date }}
+      </li>
+    </ul>
+    <div>
+      <h1 class="title">{{ post.title }}</h1>
+      <p [ngClass]="['type', post.type]">{{ post.type }}</p>
+    </div>
+    <div class="image-container">
+      <img [src]="post.imageUrl" [alt]="post.title" />
+    </div>
+    <p class="content">{{ post.content }}</p>
+  </ng-container>
+  <div class="comments">
+    <p [routerLink]="'/post/' + postId + '/comment'">
+      Show all comments ({{ post.comment.length }})
+    </p>
+  </div>
+</div>
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner [diameter]="50"></mat-spinner>
+</div>

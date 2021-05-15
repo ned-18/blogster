@@ -1,0 +1,31 @@
+<div class="control">
+  <span [ngClass]="labelClass"
+    >{{ label }} <span *ngIf="validator">*</span></span
+  >
+  <label for="image" [ngClass]="imageUploadClass">Choose image</label>
+  <input (change)="onImageSelect($event)" id="image" type="file" />
+
+  <ng-container>
+    <span [ngClass]="imageNameClass" *ngIf="imageName; else imageMaxSize">{{
+      imageName
+    }}</span>
+    <ng-template #imageMaxSize
+      ><span [ngClass]="imageNameClass">Max. size 1 MB</span></ng-template
+    >
+  </ng-container>
+
+  <ng-container *ngIf="control.invalid">
+    <div
+      class="is-danger help"
+      *ngIf="
+        control.errors.notSupportedFileType || control.errors.imageIsTooBig
+      "
+    >
+      Image is too big or type is not suported. Max. size 1 MB.
+    </div>
+  </ng-container>
+</div>
+
+<div *ngIf="imageData !== '' && imageData" [ngClass]="imagePreviewClass">
+  <img [src]="imageData" />
+</div>

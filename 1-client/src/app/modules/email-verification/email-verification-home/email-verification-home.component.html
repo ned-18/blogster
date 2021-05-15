@@ -1,0 +1,16 @@
+<div class="email-verification-container" *ngIf="!isLoading">
+  <ng-container *ngIf="success">
+    <h1>Welcome!</h1>
+    <p>{{ message }}</p>
+    <p>You can <a routerLink="/join/login">log in</a> now!</p>
+  </ng-container>
+
+  <ng-container *ngIf="!success">
+    <h1>Sorry!</h1>
+    <p>{{ message }}</p>
+    <p>Back <a routerLink="/">home</a>.</p>
+  </ng-container>
+</div>
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner [diameter]="50"></mat-spinner>
+</div>

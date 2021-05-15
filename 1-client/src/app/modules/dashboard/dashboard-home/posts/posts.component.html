@@ -1,0 +1,19 @@
+<div class="profile-header center">
+  <h1>Your Posts</h1>
+  <mat-icon class="icon" routerLink="/dashboard/add-post">post_add</mat-icon>
+</div>
+<app-table
+  *ngIf="posts.length > 0 && !isLoading"
+  [content]="posts"
+  [header]="header"
+  (onDelete)="deletePost($event)"
+></app-table>
+
+<div class="no-posts" *ngIf="posts.length === 0 && !isLoading">
+  <h1>You don't have posts currently</h1>
+  <a routerLink="/dashboard/add-post">Create one?</a>
+</div>
+
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner [diameter]="50"></mat-spinner>
+</div>

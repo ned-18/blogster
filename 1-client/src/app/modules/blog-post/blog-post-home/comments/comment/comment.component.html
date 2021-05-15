@@ -1,0 +1,21 @@
+<div class="comment-header">
+  <div class="avatar">
+    <img
+      [src]="
+        comment.user.profileImgUrl
+          ? comment.user.profileImgUrl
+          : '../../../../../assets/images/avatar.jpeg'
+      "
+      alt="avatar"
+    />
+  </div>
+  <div class="user-info">
+    <p class="username">{{ comment.user.username }}</p>
+    <p class="date">{{ comment.createdAt | date }}</p>
+  </div>
+</div>
+<div class="comment-body">
+  <p>
+    {{ comment.comment }}
+  </p>
+</div>

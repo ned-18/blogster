@@ -1,0 +1,57 @@
+form {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.button--signup {
+  display: block;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+  min-width: 7.5rem;
+  color: #fff;
+  background-color: #0db3e3;
+  font-size: 1.1rem;
+  max-width: 21.25rem;
+}
+
+.button--signup:hover {
+  transition: 0.3s;
+  background-color: #027190;
+  border: 1px solid #027190;
+}
+
+.help-passwords {
+  bottom: 3rem;
+  font-size: 0.9rem;
+}
+
+.help {
+  bottom: 1.2rem;
+}
+
+.footer {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.suggestion {
+  color: #9b9b9b;
+  margin-bottom: 3rem;
+}
+
+.policy {
+  font-size: 0.8rem;
+  color: #9b9b9b;
+}
+
+.link {
+  font-weight: 500;
+  color: #0db3e3;
+  transition: 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #027190;
+}

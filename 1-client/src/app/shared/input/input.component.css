@@ -1,0 +1,54 @@
+:host {
+  position: relative;
+}
+
+.input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #0db3e3;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 300;
+  height: 2.2rem;
+  line-height: 2.5rem;
+  outline: none;
+  padding: 0 1rem;
+  transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 100%;
+  caret-color: #0db3e3;
+  margin-bottom: 3rem;
+  font-family: inherit;
+}
+
+.input:focus {
+  color: #333;
+  border-bottom: 2px solid #333;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type="number"] {
+  -moz-appearance: textfield;
+  color: #0db3e3;
+}
+
+.input[type="date"]::-webkit-datetime-edit {
+  color: #333;
+  font-family: inherit;
+}
+
+.input[type="date"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  border-radius: 4px;
+  margin-right: 2px;
+  filter: invert(0.4);
+}
+
+.help {
+  top: 3.8rem;
+}

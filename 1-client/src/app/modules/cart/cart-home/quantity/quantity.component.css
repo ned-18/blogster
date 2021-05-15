@@ -1,0 +1,49 @@
+input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 25px;
+  height: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  text-align: center;
+  vertical-align: middle;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.remove,
+.add {
+  cursor: pointer;
+  vertical-align: middle;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.remove {
+  color: #9d0016;
+  margin-left: 0.5rem;
+}
+
+.add {
+  color: #0db3e3;
+  margin-right: 0.5rem;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

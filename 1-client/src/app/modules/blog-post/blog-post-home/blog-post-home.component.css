@@ -1,0 +1,82 @@
+.items {
+  list-style: none;
+  margin: 2rem 0 1rem 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.items li {
+  font-size: 0.8rem;
+  color: rgb(155, 155, 155);
+  vertical-align: middle;
+}
+
+.items li:last-child {
+  margin-right: 0rem;
+}
+
+.icon {
+  vertical-align: middle;
+  font-size: 1.2rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.type {
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.image-container,
+.image-container img {
+  width: 100%;
+  height: 240px;
+  border-radius: 5px;
+}
+
+.content {
+  color: #333;
+  line-height: 1.9rem;
+  padding: 1rem 0;
+  text-align: justify;
+  border-bottom: 1px solid #eee;
+}
+
+.comments p {
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.comments p:hover {
+  color: #0db3e3;
+}
+
+/*type*/
+.sport {
+  color: #027190;
+}
+
+.world {
+  color: #06ec4c;
+}
+
+.travel {
+  color: #e71f00;
+}
+
+.music {
+  color: #e7a200;
+}
+
+.other {
+  color: #333;
+}

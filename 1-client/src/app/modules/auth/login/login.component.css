@@ -1,0 +1,60 @@
+form {
+  margin-top: 2rem;
+  padding-bottom: 4rem;
+  position: relative;
+}
+
+.forgot-password {
+  text-decoration: none;
+  font-size: 0.9rem;
+  color: #0db3e3;
+  transition: 0.2s;
+}
+
+.forgot-password:hover {
+  color: #333;
+}
+
+.button--login {
+  display: block;
+  padding: 1rem 3rem;
+  margin-top: 2rem;
+  min-width: 7.5rem;
+  color: #fff;
+  background-color: #0db3e3;
+  font-size: 1.1rem;
+  max-width: 21.25rem;
+}
+
+.button--login:hover {
+  transition: 0.3s;
+  background-color: #027190;
+  border: 1px solid #027190;
+}
+
+.help {
+  bottom: 7rem;
+  font-size: 0.9rem;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.suggestion {
+  color: #9b9b9b;
+  margin-bottom: 3rem;
+}
+
+.link {
+  font-weight: 500;
+  color: #0db3e3;
+  transition: 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #027190;
+}

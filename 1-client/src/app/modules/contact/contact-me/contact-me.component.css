@@ -1,0 +1,29 @@
+.subtitle {
+  line-height: 28px;
+  margin-bottom: 2rem;
+  color: #6c757d;
+  text-align: justify;
+}
+
+form {
+  margin-bottom: 2rem;
+}
+
+.help {
+  bottom: 2.2rem;
+}
+
+.button--mail {
+  padding: 1rem 3rem;
+  min-width: 7.5rem;
+  color: #fff;
+  background-color: #0db3e3;
+  font-size: 0.9rem;
+  max-width: 21.25rem;
+}
+
+.button--mail:hover {
+  transition: 0.3s;
+  background-color: #027190;
+  border: 1px solid #027190;
+}

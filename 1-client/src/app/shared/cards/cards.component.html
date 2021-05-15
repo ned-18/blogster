@@ -1,0 +1,66 @@
+<div class="container">
+  <h1 class="header">
+    {{ title }}
+  </h1>
+  <p class="subtitle">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta mollitia
+    saepe architecto odio enim illo ex at tempora perferendis, numquam iste
+    molestiae voluptates delectus debitis eius consequatur ea quia sequi?
+  </p>
+
+  <div class="cards" *ngIf="posts.length">
+    <div class="card" *ngFor="let post of posts">
+      <h3 class="type" [ngClass]="post.type">{{ post.type }}</h3>
+      <h1 class="title" [routerLink]="'/post/' + post.id">{{ post.title }}</h1>
+
+      <ul class="items">
+        <li>
+          <mat-icon class="icon">today</mat-icon>{{ post.createdAt | date }}
+        </li>
+        <li>
+          <mat-icon fontSet="material-icons-outlined" class="icon"
+            >create</mat-icon
+          >{{ post.user.username }}
+        </li>
+        <li>
+          <mat-icon fontSet="material-icons-outlined" class="icon"
+            >forum</mat-icon
+          >{{ post.comment.length }} comments
+        </li>
+      </ul>
+
+      <div class="image-container">
+        <img
+          [src]="post.imageUrl"
+          [alt]="post.title"
+          [routerLink]="'/post/' + post.id"
+        />
+      </div>
+
+      <p class="parag">
+        {{ post.content }}
+      </p>
+
+      <a
+        href="#"
+        class="button button--read-more"
+        [routerLink]="'/post/' + post.id"
+        >Read More <mat-icon class="arrow">arrow_forward</mat-icon></a
+      >
+    </div>
+  </div>
+
+  <mat-paginator
+    *ngIf="posts.length"
+    [length]="totalPosts"
+    [pageSize]="postsPerPage"
+    (page)="changedPage($event)"
+  ></mat-paginator>
+  <div *ngIf="!posts.length && !isLoading">
+    <h1 class="no-posts">There are currently no posts</h1>
+    <a class="create-post" routerLink="/dashboard/add-post">Create post?</a>
+  </div>
+  <div class="spinner" *ngIf="isLoading">
+    <mat-spinner [diameter]="50"></mat-spinner>
+  </div>
+</div>

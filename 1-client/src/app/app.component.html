@@ -1,0 +1,12 @@
+<div class="main-container">
+  <app-sidebar *ngIf="visibility"></app-sidebar>
+  <div class="content">
+    <app-navbar *ngIf="visibility"></app-navbar>
+    <app-md-navbar
+      *ngIf="visibility"
+      [items]="items"
+      link="/dashboard/posts"
+    ></app-md-navbar>
+    <router-outlet></router-outlet>
+  </div>
+</div>

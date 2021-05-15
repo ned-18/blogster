@@ -1,0 +1,22 @@
+<div class="container">
+  <h1 class="header">Choose and buy a souvenir</h1>
+  <p class="subtitle">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus ea
+    necessitatibus voluptas modi ipsam quisquam dicta, culpa fuga ipsa atque
+    sunt, vitae laborum iusto.
+  </p>
+  <div class="items" *ngIf="books.length">
+    <app-shop-card
+      *ngFor="let book of books"
+      [book]="book"
+      (onAddToCart)="addToCart(book.id)"
+    ></app-shop-card>
+  </div>
+
+  <div *ngIf="!books.length && !isLoading">
+    <h1 class="no-books">The shop is currently empty</h1>
+  </div>
+  <div class="spinner" *ngIf="isLoading">
+    <mat-spinner [diameter]="50"></mat-spinner>
+  </div>
+</div>

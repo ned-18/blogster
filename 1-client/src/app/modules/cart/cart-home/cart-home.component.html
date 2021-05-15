@@ -1,0 +1,34 @@
+<div class="container">
+  <h1 class="header">Your cart</h1>
+  <table class="cart">
+    <tr>
+      <th>Title</th>
+      <th>Price</th>
+      <th class="quantity">Quantity</th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let item of cart.data; let i = index">
+      <ng-container *ngIf="item.product">
+        <td>{{ item.product.title | shorten: 15 }}</td>
+        <td>$ {{ item.product.price }}</td>
+        <td class="quantity">
+          <app-quantity
+            [quantity]="item.quantity"
+            (onChange)="quantity($event, i)"
+          ></app-quantity>
+        </td>
+        <td>
+          <mat-icon class="delete" (click)="deleteBook(i)">delete</mat-icon>
+        </td>
+      </ng-container>
+    </tr>
+  </table>
+  <div class="if-cart" *ngIf="!cart.data[0].product">
+    <p>You currently have no items in your shopping cart</p>
+  </div>
+  <div class="checkout" *ngIf="cart.data[0].product">
+    <p class="currency-text">Total price:</p>
+    <p class="currency">{{ totalPrice | currency }}</p>
+    <a routerLink="/checkout" class="button button--checkout">Checkout</a>
+  </div>
+</div>

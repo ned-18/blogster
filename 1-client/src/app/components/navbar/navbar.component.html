@@ -1,0 +1,27 @@
+<div class="navbar">
+  <ng-container *ngIf="!signedIn">
+    <div class="navbar-box--buttons">
+      <a routerLink="join/login" class="button button--login">Log in</a>
+      <a routerLink="join/signup" class="button button--register">Register</a>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="signedIn">
+    <div class="navbar-box">
+      <a class="username" routerLink="/dashboard/posts">{{ username }}</a>
+    </div>
+    <div class="navbar-box">
+      <div class="cart">
+        <mat-icon
+          fontSet="material-icons-outlined"
+          class="icon"
+          routerLink="/cart"
+          >shopping_cart</mat-icon
+        >
+        <div routerLink="/cart" class="cart-num" *ngIf="totalItems > 0">
+          <p>{{ totalItems }}</p>
+        </div>
+      </div>
+      <a (click)="onLogout()" class="button button--logout">Logout</a>
+    </div>
+  </ng-container>
+</div>

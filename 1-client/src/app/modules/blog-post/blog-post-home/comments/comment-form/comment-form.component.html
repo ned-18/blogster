@@ -1,0 +1,33 @@
+<form
+  [formGroup]="commentForm"
+  (ngSubmit)="onCreateComment(commentForm.value)"
+  *ngIf="signedIn; else elseBlock"
+>
+  <div class="control">
+    <label class="label">Leave your comment <span>*</span></label>
+    <textarea
+      class="textarea"
+      rows="3"
+      [formControl]="commentForm.get('comment')"
+    ></textarea>
+
+    <ng-container *ngIf="showErrors('comment')">
+      <div class="is-danger help">
+        Comment field is required and must be at least 3 characters.
+      </div>
+    </ng-container>
+  </div>
+  <button
+    type="submit"
+    class="button button--comment"
+    [disabled]="commentForm.invalid"
+  >
+    Leave your comment
+  </button>
+</form>
+<ng-template #elseBlock
+  ><p class="login">
+    You must be
+    <a [routerLink]="'/join/login'"> logged in</a> to post a comment.
+  </p></ng-template
+>

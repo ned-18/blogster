@@ -1,0 +1,83 @@
+.help {
+  display: block;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Post image upload */
+.image-upload {
+  display: inline-block;
+  background-color: #fff;
+  color: #0db3e3;
+  border: 1px solid #0db3e3;
+  cursor: pointer;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
+}
+
+.image-upload:hover {
+  background-color: #0db3e3;
+  color: #fff;
+}
+
+.image-name {
+  margin-left: 1rem;
+  font-size: 0.7rem;
+}
+
+.image-preview {
+  margin-top: 1rem;
+  max-width: 500px;
+}
+
+.image-preview img {
+  width: 100%;
+}
+
+/* Profile image upload */
+.image-upload-profile {
+  text-transform: uppercase;
+  width: 100%;
+  display: block;
+  border-bottom: 2px solid #0db3e3;
+  padding: 0.5rem 0;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease-in;
+}
+
+.image-upload-profile:hover {
+  font-weight: 600;
+  border-bottom: 2px solid #333;
+}
+
+.image-name-profile {
+  display: none;
+}
+
+.image-preview-profile {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #0db3e3;
+  border-radius: 50px;
+  margin: 3rem auto;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.image-preview-profile img {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.help {
+  bottom: -1.1rem;
+}

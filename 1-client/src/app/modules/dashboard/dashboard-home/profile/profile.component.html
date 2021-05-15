@@ -1,0 +1,91 @@
+<div class="profile-header">
+  <h1>Edit your profile</h1>
+</div>
+<form [formGroup]="profileForm" (ngSubmit)="editProfile()" *ngIf="!isLoading">
+  <div class="group">
+    <app-input
+      [name]="'firstName'"
+      [control]="profileForm.get('firstName')"
+      [label]="'First Name'"
+      [maxlength]="'60'"
+    ></app-input>
+    <app-input
+      [name]="'lastName'"
+      [control]="profileForm.get('lastName')"
+      [label]="'Last Name'"
+      [maxlength]="'60'"
+    ></app-input>
+  </div>
+  <div class="position">
+    <app-input
+      [name]="'username'"
+      [control]="profileForm.get('username')"
+      [label]="'Username'"
+      [maxlength]="'60'"
+      (input)="isUsernameExists = null"
+    ></app-input>
+    <ng-container
+      *ngIf="isUsernameExists && !profileForm.get('username').errors"
+    >
+      <p class="is-danger help">
+        {{ isUsernameExists }} Please enter another username!
+      </p>
+    </ng-container>
+  </div>
+  <div class="position">
+    <app-input
+      [name]="'email'"
+      [control]="profileForm.get('email')"
+      [label]="'Email'"
+      [maxlength]="'60'"
+      (input)="isEmailExists = null"
+    ></app-input>
+    <ng-container *ngIf="isEmailExists && !profileForm.get('email').errors">
+      <p class="is-danger help">
+        {{ isEmailExists }} Please enter another email!
+      </p>
+    </ng-container>
+  </div>
+  <div class="group">
+    <app-input
+      [name]="'phone'"
+      [control]="profileForm.get('phone')"
+      [label]="'Phone'"
+      [type]="'number'"
+    ></app-input>
+    <app-input
+      [name]="'birthday'"
+      [control]="profileForm.get('birthday')"
+      [label]="'Birthday'"
+      [type]="'date'"
+    ></app-input>
+  </div>
+
+  <div class="links">
+    <a routerLink="/dashboard/profile-image" class="profile-image"
+      >Change your profile image?</a
+    >
+    <a routerLink="change-password" class="change-password"
+      >Change your password?</a
+    >
+  </div>
+
+  <div class="buttons">
+    <button
+      class="button button--add"
+      [disabled]="profileForm.invalid"
+      type="submit"
+    >
+      Save profile
+    </button>
+    <a class="button button--back" routerLink="/dashboard/posts"> Cancel </a>
+  </div>
+</form>
+
+<div>
+  <a class="delete-profile" routerLink="delete-profile">Delete your profile</a>
+</div>
+
+<div class="spinner" *ngIf="isLoading">
+  <mat-spinner [diameter]="50"></mat-spinner>
+</div>
